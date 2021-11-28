@@ -1,6 +1,10 @@
+import ItemCount from './ItemCount'; 
 
+const ItemListContainer = () => {
 
-const ItemListContainer = ({greeting}) => {
+    const onAdd = () => { 
+        console.log ("Agregado al Carrito")
+    }
 
     const style = {
         backgroundColor: 'yellow',
@@ -9,7 +13,10 @@ const ItemListContainer = ({greeting}) => {
     }
 
     return (
-        <h1 style={style}>{greeting}</h1>
+        <div> 
+            <ItemCount onAdd = {onAdd} /> 
+
+        </div>
     )
 }
 
