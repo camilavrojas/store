@@ -5,7 +5,7 @@ const CartWidget = () => {
     }
 
     return (
-        <img style={style} src={'./cart.png'}/> 
+        <img style={style} src={'./cart.png'} alt="carrito de compras"/> 
     )
 }
 

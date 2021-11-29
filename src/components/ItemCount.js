@@ -1,6 +1,9 @@
 import React, {useState} from "react";
+import '../CardStyle.css';
+ 
 
 const ItemCount = ({onAdd}) => {
+
 
 
     const [contador, setContador] = useState(1);
@@ -20,12 +23,14 @@ const ItemCount = ({onAdd}) => {
 
 
     return (
-        <div className="itemCount"> 
-            <button onClick={sumarClick}>+</button>
-            <span>{contador}</span>
-            <button onClick={restarClick} disabled={contador ===0} >-</button>
+        <div className="Card" > 
+            <span className="SpanContador">{contador}</span>
+        <div className="BotonContador"> 
+            <button onClick={sumarClick} className="BtnCss">+</button>
+            <button onClick={restarClick} disabled={contador ===0} className="BtnCss">-</button>
+        </div>
         <div>
-            <button onClick={onAdd}> Agregar al carrito</button>
+            <button onClick={onAdd} type="button" class="btn btn-light">Agregar al carrito</button>
         </div>
         </div>
     )

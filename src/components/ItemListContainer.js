@@ -6,11 +6,6 @@ const ItemListContainer = () => {
         console.log ("Agregado al Carrito")
     }
 
-    const style = {
-        backgroundColor: 'yellow',
-        height: 200,
-        padding: 40
-    }
 
     return (
         <div> 
