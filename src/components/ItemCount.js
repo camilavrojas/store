@@ -30,7 +30,7 @@ const ItemCount = ({onAdd}) => {
             <button onClick={restarClick} disabled={contador ===0} className="BtnCss">-</button>
         </div>
         <div>
-            <button onClick={onAdd} type="button" class="btn btn-light">Agregar al carrito</button>
+            <button onClick={onAdd} type="button" className="btn btn-light">Agregar al carrito</button>
         </div>
         </div>
     )
