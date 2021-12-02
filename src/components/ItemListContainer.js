@@ -1,16 +1,28 @@
-import ItemCount from './ItemCount'; 
+import { useEffect } from "react"
+import { useState } from "react/cjs/react.development"
+import ItemList from "./ItemList"
+import {getProducts} from './products'
+
 
 const ItemListContainer = () => {
 
-    const onAdd = () => { 
-        console.log ("Agregado al Carrito")
-    }
+    const [products, setProducts] = useState([])
 
+    useEffect(() => {
+        const list = getProducts() 
+        list.then(list => {
+            setProducts(list)
+        })
+
+        return(() => {
+            setProducts([])
+        })
+    }, [])
 
     return (
         <div> 
-            <ItemCount onAdd = {onAdd} /> 
-
+            <ItemList products={products} />
+        
         </div>
     )
 }
