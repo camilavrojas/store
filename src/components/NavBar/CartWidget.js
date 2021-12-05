@@ -1,11 +1,13 @@
+import './NavBar.css'
+
 const CartWidget = () => {
 
     const style = {
-        height: 40
+        height: 30
     }
 
     return (
-        <img style={style} src={'./cart.png'} alt="carrito de compras"/> 
+        <img className="ImgCart" style={style} src={'./cart.png'} alt="carrito de compras"/> 
     )
 }
 

@@ -1,21 +1,24 @@
+import './StyleComp.css';
+
 const Item = ({product}) => {
 
     return (
-        <div> 
+        <div className="DivItem"> 
 
             <div> 
 
-                <h3>{product.name}</h3>
+                <h4 className="HItem">{product.name}</h4>
 
             </div>
 
-            <img src={product.img} alt={product.name} />
+            <img src={product.img} alt={product.name} className="ImgItem"/>
 
-            <p> Precio: {product.price} </p>
+            <p className="PItem"> Precio: {product.price}</p>
 
-            <button>Ver detalle</button>
+            <button type="button" className="ButtonItem btn btn-dark">Ver detalle</button>
 
         </div>
+        
     )
 }
 

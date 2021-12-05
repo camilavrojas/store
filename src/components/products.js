@@ -1,8 +1,8 @@
 const products = [  
-    {id:1, name: 'Coso uno', price: '50 uds', category: 'celular', img: 'https://servicios.zonatecno.com.uy/productos/Celular_Xiaomi_Redmi_Note_10s_128GB_6GB_Onyx_Gray_DS_tab_1.png'},
-    {id:2, name: 'Coso dos', price: '50 uds', category: 'celular',  img: 'https://servicios.zonatecno.com.uy/productos/Celular_Xiaomi_Redmi_Note_10s_128GB_6GB_Onyx_Gray_DS_tab_1.png'},
-    {id:3, name: 'Coso tres', price: '50 uds', category: 'celular',  img: 'https://servicios.zonatecno.com.uy/productos/Celular_Xiaomi_Redmi_Note_10s_128GB_6GB_Onyx_Gray_DS_tab_1.png'},
-    {id:4, name: 'Coso cuatro', price: '50 uds', category: 'celular',  img: 'https://servicios.zonatecno.com.uy/productos/Celular_Xiaomi_Redmi_Note_10s_128GB_6GB_Onyx_Gray_DS_tab_1.png'}
+    {id:1, name: 'Chamonix 75mm', price: '150 uds', img: 'https://i.blogs.es/15b990/432_660_lomo1/450_1000.jpg'},
+    {id:2, name: 'CMYK Mag 75mm ', price: '99 uds',   img: 'https://blogs.infobae.com/una-buena-foto/files/2013/06/camara-lomo-diana-f-cmyk-cflash-lomography_MLA-F-126737823_6416.jpg'},
+    {id:3, name: 'Diana F+ 75mm', price: '180 uds',  img: 'https://www.ds-km.com/wp-content/uploads/2021/05/lomo-diana-flash-910x1024.jpg'}
+    
 ]
 
 export const getProducts = () => {
