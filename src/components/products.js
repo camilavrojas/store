@@ -9,6 +9,14 @@ export const getProducts = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
+        }, 500 )
+    })
+}
+
+export const getItem = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products[1]);
         }, 1000 )
     })
 }
