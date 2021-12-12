@@ -1,4 +1,5 @@
 import './StyleComp.css';
+import {Link} from 'react-router-dom'
 
 const Item = ({product}) => {
 
@@ -15,7 +16,7 @@ const Item = ({product}) => {
 
             <p className="PItem"> Precio: {product.price}</p>
 
-            <button type="button" className="ButtonItem btn btn-dark">Ver detalle</button>
+            <Link to={`/detail/${product.id}` } type="button" className="ButtonItem btn btn-dark">Ver detalle</Link>
 
         </div>
         

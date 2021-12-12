@@ -1,5 +1,5 @@
 const products = [  
-    {id:1, 
+    {id: 1 , 
         name: 'Chamonix 75mm', 
         price: '150 uds', 
         img: 'https://i.blogs.es/15b990/432_660_lomo1/450_1000.jpg',
@@ -9,7 +9,7 @@ const products = [
         apertura: 'f/5.6.',
         flash: 'Si.'},
 
-    {id:2, 
+    {id: 2 , 
         name: 'CMYK Mag 75mm ', 
         price: '99 uds',   
         img: 'https://blogs.infobae.com/una-buena-foto/files/2013/06/camara-lomo-diana-f-cmyk-cflash-lomography_MLA-F-126737823_6416.jpg', 
@@ -18,7 +18,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'f/4.',
         flash: 'Si.'},
-    {id:3, 
+    {id: 3 , 
         name: 'Diana F+ 75mm', 
         price: '180 uds',  
         img: 'https://www.ds-km.com/wp-content/uploads/2021/05/lomo-diana-flash-910x1024.jpg', 
@@ -38,10 +38,20 @@ export const getProducts = () => {
     })
 }
 
+
+export const getProductById = (id) => {
+
+return new Promise((resolve, reject) => {
+    const product = products.find(prod => parseInt(prod.id) === parseInt(id))
+    setTimeout(() => resolve(product), 500)
+    })
+}
+
+
 export const getItem = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products[2]);
-        }, 1000 )
+            resolve(products);
+        }, 500 )
     })
 }
