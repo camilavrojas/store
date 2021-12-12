@@ -7,7 +7,8 @@ const products = [
         distancia: '75 mm.',
         rollo: '35 mm.',
         apertura: 'f/5.6.',
-        flash: 'Si.'},
+        flash: 'Si.',
+        categoria: 'camara'},
 
     {id: 2 , 
         name: 'CMYK Mag 75mm ', 
@@ -17,7 +18,8 @@ const products = [
         distancia: '75 mm.',
         rollo: '35 mm.',
         apertura: 'f/4.',
-        flash: 'Si.'},
+        flash: 'Si.',
+        categoria: 'camara'},
     {id: 3 , 
         name: 'Diana F+ 75mm', 
         price: '180 uds',  
@@ -26,32 +28,92 @@ const products = [
         distancia: '75 mm.',
         rollo: '120 mm.',
         apertura: 'f/8',
-        flash: 'Si.'}
-    
+        flash: 'Si.',
+        categoria: 'camara'},
+    {id: 4 , 
+        name: 'Diana Instant Sq', 
+        price: '180 uds',  
+        img: 'https://www.fotodng.com/wp-content/uploads/2018/06/diana-instant-square.jpg', 
+        description: 'Equipada con una increíble gama de funciones experimentales: exposiciones múltiples y largas ilimitadas, un espejo selfie y muchos accesorios como el Splitzer, Filtros de Densidad de Color y Neutral, y mucho más.',
+        distancia: '75 mm',
+        rollo: '35 mm.',
+        apertura: '2.8',
+        flash: 'Si.',
+        categoria: 'rollo'},
+    {id: 5 , 
+        name: 'Metro- Tokyo Ed', 
+        price: '51 uds',  
+        img: 'https://i2.wp.com/tienda.c41.com.ar/wp-content/uploads/2021/09/metropolis_tokyo_fordesigner_fim_and_tin.jpg?fit=1776%2C1776&ssl=1', 
+        description: 'Una fórmula química única que desatura los colores y hace que los contrastes destaquen, ¡ahora en una edición muy especial celebrando los 20 años de Lomography Japan! ',
+        distancia: 'No aplica.',
+        rollo: '35 mm.',
+        apertura: 'No aplica.',
+        flash: 'No aplica.',
+        categoria: 'rollo'},
+    {id: 6 , 
+        name: 'Metropolis LM', 
+        price: '58 uds',  
+        img: 'https://i0.wp.com/tienda.c41.com.ar/wp-content/uploads/2020/09/LC-Metropolis.jpg?fit=1920%2C1920&ssl=1', 
+        description: 'Esta película viene con una fórmula química única, desarrollada específicamente en nuestra factoría de películas Lomography, que desatura los colores, silencia los tonos y hace que los contrastes destaquen.',
+        distancia: 'No aplica.',
+        rollo: '35 mm.',
+        apertura: 'No aplica.',
+        flash: 'No aplica.',
+        categoria: 'rollo'},
+    {id: 7 , 
+        name: 'Adox CMS 20 II ', 
+        price: '30 uds',  
+        img: 'https://i0.wp.com/tienda.c41.com.ar/wp-content/uploads/2016/12/cms20.jpg?fit=4252%2C4252&ssl=1', 
+        description: 'Ninguna otra película es más nítida, ninguna otra película tiene más grano fino, ninguna otra película resuelve más líneas por mm (hasta 800 l/mm). ',
+        distancia: 'No aplica.',
+        rollo: '35 mm.',
+        apertura: 'No aplica.',
+        flash: 'No aplica.',
+        categoria: 'rollo'},
+    {id: 8 , 
+        name: 'Lomography 100', 
+        price: '37 uds',  
+        img: 'https://i1.wp.com/tienda.c41.com.ar/wp-content/uploads/2016/01/575805-1024-10241.jpg?fit=709%2C709&ssl=1', 
+        description: 'La película Negativo Color Lomography 100 35mm ofrece un grano fino y unos matices sensacionales, que dan como resultado unas fotos con colores vivos y una nitidez insuperable.',
+        distancia: 'No aplica.',
+        rollo: '120 mm.',
+        apertura: 'No aplica.',
+        flash: 'No aplica.',
+        categoria: 'rollo'}
+    ]
+
+const categories = [
+    {id:'rollo', description:'Rollo'},
+    {id:'camara',description:'Camara'}
 ]
 
-export const getProducts = () => {
+export const getCategories = () => {    
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(categories)
+        }, 500)        
+    })
+}
+
+export const getProducts = () => {    
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 500 )
+        }, 500)        
     })
 }
 
-
-export const getProductById = (id) => {
-
-return new Promise((resolve, reject) => {
-    const product = products.find(prod => parseInt(prod.id) === parseInt(id))
-    setTimeout(() => resolve(product), 500)
+export const getProductById = (id) => {  
+    return new Promise((resolve, reject) => {
+        const product = products.find(prod => parseInt(prod.id) === parseInt(id))
+        setTimeout(() => resolve(product), 500)
     })
 }
 
-
-export const getItem = () => {
+export const getItem = () => {    
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products);
-        }, 500 )
+            resolve(products[0])
+        }, 500)        
     })
 }

@@ -1,7 +1,7 @@
 import ItemCount from './ItemCount'; 
 import './StyleComp.css';
 
-const ItemDetail  = ({products}) => {
+const ItemDetail  = ({product}) => {
     const onAdd = () => { 
         console.log ("Agregado al Carrito")
     }
@@ -10,28 +10,28 @@ const ItemDetail  = ({products}) => {
 
         <div>
 
-<div className="DivDetail"> 
+            <div className="DivDetail"> 
 
-<div> 
-<img src={products.img} alt={products.name} className="ImgItemDetail"/>
-<ItemCount onAdd = {onAdd} /> 
-</div>
+            <div> 
+            <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
+            <ItemCount onAdd = {onAdd} /> 
+            </div>
 
-<div class="DivProducts card border-secondary mb-3">
-<div class="card-header">{products.name}</div>
-<div class="card-body text-secondary">
-    <p class="card-text">{products.description}</p>
-</div>
-<table className="TableClass">
-    <th className="ThClass">Otras caracteristicas:</th>
-    <tr className="TrClass">Distancia focal del lente: {products.distancia}</tr>
-    <tr className="TrClass">Formato del rollo: {products.rollo}</tr>
-    <tr className="TrClass">Apertura máxima del lente: {products.apertura}</tr>
-    <tr className="TrClass">Con flash incorporado: {products.flash}</tr>
-</table>
-</div>
+            <div class="DivProducts card border-secondary mb-3">
+            <div class="card-header">{product?.name}</div>
+            <div class="card-body text-secondary">
+                <p class="card-text">{product?.description}</p>
+            </div>
+            <table className="TableClass">
+                <th className="ThClass">Otras caracteristicas:</th>
+                <tr className="TrClass">Distancia focal del lente: {product?.distancia}</tr>
+                <tr className="TrClass">Formato del rollo: {product?.rollo}</tr>
+                <tr className="TrClass">Apertura máxima del lente: {product?.apertura}</tr>
+                <tr className="TrClass">Con flash incorporado: {product?.flash}</tr>
+            </table>
+            </div>
 
-</div>
+            </div>
         </div>
 
     )

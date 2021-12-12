@@ -1,11 +1,12 @@
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App"> 
     <BrowserRouter> 
@@ -14,7 +15,7 @@ function App() {
         <Route exact path='/'>
           <ItemListContainer/>
         </Route>
-        <Route patch='/detail/:paramId'>
+        <Route exact path='/detail/:paramId'>
          <ItemDetailContainer/>
         </Route>
       </Switch>

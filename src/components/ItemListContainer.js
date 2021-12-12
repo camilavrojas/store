@@ -10,8 +10,9 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const list = getProducts() 
-        list.then(list => {
-            setProducts(list)
+
+        list.then(item => {
+            setProducts(item)
         })
 
         return(() => {
@@ -22,7 +23,6 @@ const ItemListContainer = () => {
     return (
         <div> 
             <ItemList products={products} />
-        
         </div>
     )
 }
