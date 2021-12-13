@@ -2,31 +2,32 @@ import { useEffect } from "react"
 import { useState } from "react/cjs/react.development"
 import ItemList from "./ItemList"
 import {getProducts} from './products'
+import { useParams } from 'react-router-dom'
 
 
-const ItemListContainer = () => {
-
+const ItemListContainer = ()=> {
     const [products, setProducts] = useState([])
+    const { categoryId } = useParams()
 
-    useEffect(() => {
-        const list = getProducts() 
-
-        list.then(item => {
+    useEffect(() => {        
+        getProducts(categoryId).then(item => {
             setProducts(item)
+        }).catch(err  => {
+            console.log(err)
         })
 
-        return(() => {
+        return (() => {
             setProducts([])
         })
-    }, [])
+        
+    }, [categoryId])
 
     return (
-        <div> 
-            <ItemList products={products} />
+        <div className="ItemListContainer">
+            <ItemList  products={products}/>
         </div>
-    )
+    )    
+    
 }
 
-
-
-export default ItemListContainer;
+export default ItemListContainer

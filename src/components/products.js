@@ -8,7 +8,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'f/5.6.',
         flash: 'Si.',
-        categoria: 'camara'},
+        category: 'camara'},
 
     {id: 2 , 
         name: 'CMYK Mag 75mm ', 
@@ -19,7 +19,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'f/4.',
         flash: 'Si.',
-        categoria: 'camara'},
+        category: 'camara'},
     {id: 3 , 
         name: 'Diana F+ 75mm', 
         price: '180 uds',  
@@ -29,7 +29,7 @@ const products = [
         rollo: '120 mm.',
         apertura: 'f/8',
         flash: 'Si.',
-        categoria: 'camara'},
+        category: 'camara'},
     {id: 4 , 
         name: 'Diana Instant Sq', 
         price: '180 uds',  
@@ -39,7 +39,7 @@ const products = [
         rollo: '35 mm.',
         apertura: '2.8',
         flash: 'Si.',
-        categoria: 'rollo'},
+        category: 'rollo'},
     {id: 5 , 
         name: 'Metro- Tokyo Ed', 
         price: '51 uds',  
@@ -49,7 +49,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'No aplica.',
         flash: 'No aplica.',
-        categoria: 'rollo'},
+        category: 'rollo'},
     {id: 6 , 
         name: 'Metropolis LM', 
         price: '58 uds',  
@@ -59,7 +59,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'No aplica.',
         flash: 'No aplica.',
-        categoria: 'rollo'},
+        category: 'rollo'},
     {id: 7 , 
         name: 'Adox CMS 20 II ', 
         price: '30 uds',  
@@ -69,7 +69,7 @@ const products = [
         rollo: '35 mm.',
         apertura: 'No aplica.',
         flash: 'No aplica.',
-        categoria: 'rollo'},
+        category: 'rollo'},
     {id: 8 , 
         name: 'Lomography 100', 
         price: '37 uds',  
@@ -79,11 +79,11 @@ const products = [
         rollo: '120 mm.',
         apertura: 'No aplica.',
         flash: 'No aplica.',
-        categoria: 'rollo'}
+        category: 'rollo'}
     ]
 
 const categories = [
-    {id:'rollo', description:'Rollo'},
+    {id:'rollo', description:'Rollos'},
     {id:'camara',description:'Camara'}
 ]
 
@@ -95,11 +95,11 @@ export const getCategories = () => {
     })
 }
 
-export const getProducts = () => {    
+export const getProducts = (category) => {    
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products)
-        }, 500)        
+            category ? resolve(products.filter(product => product.category === category)) : resolve(products)
+        }, 1000)        
     })
 }
 
