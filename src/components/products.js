@@ -83,22 +83,27 @@ const products = [
     ]
 
 
-export const getCategories = (categoryId) => {
-    return new Promise((resolve, reject) => {
-      const filteredProducts = products.filter(
-        (prod) => prod.category === categoryId
-      );
-      setTimeout(() => resolve(filteredProducts), 500);
-    });
-};
+const categories = [
+    {id: 'rollo', description: 'Rollos'},
+    {id: 'camara', description: 'Cámaras'}
+]
 
-export const getProducts = () => {
+
+export const getCategories = () => {    
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(categories)
+        }, 500)        
+    })
+}
+
+export const getProducts = (category) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(products);
+        category ? resolve(products.filter(product => product.category === category)): resolve(products)
       }, 500);
-    });
-};
+    })
+}
 
 export const getProductById = (id) => {  
     return new Promise((resolve, reject) => {

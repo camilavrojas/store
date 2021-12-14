@@ -12,7 +12,7 @@ const NavBar = () => {
       setCategories(categories)
     })
   },[])
-  console.log(categories)
+ 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/#">Metropolis</a>
@@ -25,8 +25,7 @@ const NavBar = () => {
                 <Link to={'/'} className="nav-link" >Inicio <span className="sr-only"></span></Link>
               </li>
               <div className="Categories">
-                <Link to="/category/rollo" className='Option'>Rollo</Link>
-                <Link to="/category/camara" className='Option'>Camara</Link>
+              {categories.map(cat => <Link key={cat.id} className='Option' to={`/category/${cat.id}`} >{cat.description} </Link> )}
               </div>
             </ul>
           </div>
