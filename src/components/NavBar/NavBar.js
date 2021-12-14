@@ -25,7 +25,8 @@ const NavBar = () => {
                 <Link to={'/'} className="nav-link" >Inicio <span className="sr-only"></span></Link>
               </li>
               <div className="Categories">
-                    {categories.map(cat => <Link key={cat.id} className='Option' className='Option' to={`/category/${cat.id}`}>{cat.description}</Link>)}
+                <Link to="/category/rollo" className='Option'>Rollo</Link>
+                <Link to="/category/camara" className='Option'>Camara</Link>
               </div>
             </ul>
           </div>

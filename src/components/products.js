@@ -87,21 +87,22 @@ const categories = [
     {id:'camara',description:'Camara'}
 ]
 
-export const getCategories = () => {    
+export const getCategories = (categoryId) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(categories)
-        }, 500)        
-    })
-}
+      const filteredProducts = products.filter(
+        (prod) => prod.category === categoryId
+      );
+      setTimeout(() => resolve(filteredProducts), 500);
+    });
+  };
 
-export const getProducts = (category) => {    
+export const getProducts = () => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            category ? resolve(products.filter(product => product.category === category)) : resolve(products)
-        }, 1000)        
-    })
-}
+      setTimeout(() => {
+        resolve(products);
+      }, 500);
+    });
+};
 
 export const getProductById = (id) => {  
     return new Promise((resolve, reject) => {
@@ -117,3 +118,4 @@ export const getItem = () => {
         }, 500)        
     })
 }
+  
