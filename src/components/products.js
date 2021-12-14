@@ -82,10 +82,6 @@ const products = [
         category: 'rollo'}
     ]
 
-const categories = [
-    {id:'rollo', description:'Rollos'},
-    {id:'camara',description:'Camara'}
-]
 
 export const getCategories = (categoryId) => {
     return new Promise((resolve, reject) => {
@@ -94,7 +90,7 @@ export const getCategories = (categoryId) => {
       );
       setTimeout(() => resolve(filteredProducts), 500);
     });
-  };
+};
 
 export const getProducts = () => {
     return new Promise((resolve, reject) => {
