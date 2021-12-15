@@ -39,7 +39,7 @@ const products = [
         rollo: '35 mm.',
         apertura: '2.8',
         flash: 'Si.',
-        category: 'rollo'},
+        category: 'camara'},
     {id: 5 , 
         name: 'Metro- Tokyo Ed', 
         price: '51 uds',  
