@@ -1,9 +1,14 @@
-import ItemCount from './ItemCount'; 
+import {InputCount} from './ItemCount'
+import {ButtonCount} from './ItemCount'
 import './StyleComp.css';
 
-const ItemDetail  = ({product}) => {
-    const onAdd = () => { 
-        console.log ("Agregado al Carrito")
+
+const ItemDetail = ({ product, inputType = 'input' }) => {
+
+    const Count = inputType === 'input' ? ButtonCount : InputCount 
+
+    const addToCart = (count) => { 
+        console.log(`Agregado al carrito ${count}`)
     }
 
     return (
@@ -14,7 +19,7 @@ const ItemDetail  = ({product}) => {
 
             <div> 
             <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
-            <ItemCount onAdd = {onAdd} /> 
+            <Count onConfirm={addToCart} maxQuantity={product?.stock}/>
             </div>
 
             <div class="DivProducts card border-secondary mb-3">

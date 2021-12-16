@@ -1,38 +1,48 @@
 import React, {useState} from "react";
-import '../components/StyleComp.css';
- 
-
-const ItemCount = ({onAdd}) => {
 
 
+export const InputCount = ({onConfirm, maxQuantity}) => {
+    const [count, setCount] = useState(0)
 
-    const [contador, setContador] = useState(1);
-
-    const sumarClick = () => {
-        if (contador <5 ) {
-        setContador (contador +1)
-        } 
-    }
-
-    const restarClick = () => {
-        if (contador <6 ) {
-        setContador (contador -1) 
+    const handleChange = ({target}) => {
+        if(target.value <= maxQuantity && target.value >= 0) {
+            setCount(target.value)
         }
     }
- 
-
 
     return (
-        <div className="Card" > 
-            <div className="BotonContador"> 
-                <button onClick={sumarClick}  type="button" class="btn btn-primary btn-sm"> + </button>
-                <button onClick={restarClick} type="button" class="btn btn-secondary btn-sm"> - </button>
-            </div>
-            <div>
-                <button onClick={onAdd} type="button" className="btn btn-light">Agregar al carrito: {contador} </button>
-            </div>
+        <div>
+            <input type='number' onChange={handleChange} value={count}/>
+            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
         </div>
     )
 }
 
-export default ItemCount
+export const ButtonCount = ({ onConfirm, maxQuantity}) => {
+    const [count, setCount] = useState(0)
+
+    const sumar = () => {
+        if(count < maxQuantity) {
+            setCount(count + 1)
+        }
+    }
+
+    const restar = () => {
+        if(count > 0) {
+            setCount(count - 1)
+        }
+    }
+
+    return (
+
+        <div className="Card" > 
+            <div className="BotonContador"> 
+                <button onClick={sumar}  class="btn btn-primary btn-sm"> + </button>
+                <button onClick={restar}  class="btn btn-secondary btn-sm"> - </button>
+            </div>
+            <div>
+                <button onClick={() => onConfirm(count)} className="btn btn-light">Agregar al carrito: {count} </button>
+            </div>
+        </div>
+    )
+}
