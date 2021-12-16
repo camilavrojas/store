@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './StyleComp.css';
 
 
 export const InputCount = ({onConfirm, maxQuantity}) => {

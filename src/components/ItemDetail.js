@@ -1,6 +1,5 @@
 import {InputCount} from './ItemCount'
 import {ButtonCount} from './ItemCount'
-import './StyleComp.css';
 
 
 const ItemDetail = ({ product, inputType = 'input' }) => {
