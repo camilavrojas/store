@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './StyleComp.css';
+import {Link} from 'react-router-dom' 
 
 
 export const InputCount = ({onConfirm, maxQuantity}) => {
@@ -14,7 +15,7 @@ export const InputCount = ({onConfirm, maxQuantity}) => {
     return (
         <div>
             <input type='number' onChange={handleChange} value={count}/>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
+            <input onClick={() => onConfirm(count)}>Agregar al carrito</input>
         </div>
     )
 }
@@ -43,6 +44,9 @@ export const ButtonCount = ({ onConfirm, maxQuantity}) => {
             </div>
             <div>
                 <button onClick={() => onConfirm(count)} className="btn btn-light">Agregar al carrito: {count} </button>
+            </div>
+            <div>
+                <Link to={'/cart/'} className="btn btn-light">Ir al carrito</Link>
             </div>
         </div>
     )

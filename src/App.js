@@ -2,7 +2,8 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import Cart from './components/Cart';
 
 const App = () => {
 
@@ -19,6 +20,9 @@ const App = () => {
         </Route>
         <Route path='/detail/:paramId'>
          <ItemDetailContainer/>
+        </Route>
+        <Route path='/cart/'> 
+        <Cart/>
         </Route>
       </Switch>
      </BrowserRouter>

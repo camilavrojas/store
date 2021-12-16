@@ -4,9 +4,9 @@ import {ButtonCount} from './ItemCount'
 
 const ItemDetail = ({ product, inputType = 'input' }) => {
 
-    const Count = inputType === 'input' ? ButtonCount : InputCount 
+    const ItemCount = inputType === 'input' ? ButtonCount : InputCount 
 
-    const addToCart = (count) => { 
+    const addOn = (count) => { 
         console.log(`Agregado al carrito ${count}`)
     }
 
@@ -18,7 +18,7 @@ const ItemDetail = ({ product, inputType = 'input' }) => {
 
             <div> 
             <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
-            <Count onConfirm={addToCart} maxQuantity={product?.stock}/>
+            <ItemCount onConfirm={addOn} maxQuantity={product?.stock}/>
             </div>
 
             <div class="DivProducts card border-secondary mb-3">
