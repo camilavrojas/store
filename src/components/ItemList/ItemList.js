@@ -1,4 +1,4 @@
-import Item from './Item';
+import Item from '../../components/Item/Item.js';
 
 const ItemList = ({products = [] }) => {
 

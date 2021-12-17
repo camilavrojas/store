@@ -1,4 +1,4 @@
-import './StyleComp.css';
+import '../../components/Styles/StyleComp.css';
 import {Link} from 'react-router-dom'
 
 const Item = ({product}) => {

@@ -1,4 +1,4 @@
-import ItemCount from '../ItemCount/ItemCount'; 
+import ItemCount from '../../components/ItemCount/ItemCount'; 
 import '../../components/Styles/StyleComp.css';
 
 const ItemDetail  = ({product}) => {

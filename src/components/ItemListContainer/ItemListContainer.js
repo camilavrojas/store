@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react/cjs/react.development"
-import ItemList from "../../ItemList/ItemList"
-import {getProducts} from '../../Productos/products'
-import {getCategories} from '../../Productos/products'
+import ItemList from "../../components/ItemList/ItemList"
+import {getProducts} from '../../components/Productos/products'
+import {getCategories} from '../../components/Productos/products'
 import { useParams } from 'react-router-dom'
 
 
