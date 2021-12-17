@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicacion creada con react y jxs, se utilizaron estilos de CSS, como tambien de la libreria Bootstrap,
 
 Metropolis es una tienda fotografica online, la misma dispone de un catalogo novedoso de camaras analogicas prefabricadas, como tambien una amplia venta de films analogicos, de diferentes distancias focales con increibles filtros para que tus fotografias sean mas lindas.
 
