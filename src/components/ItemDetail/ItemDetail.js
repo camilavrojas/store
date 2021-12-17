@@ -1,5 +1,5 @@
-import ItemCount from './ItemCount'; 
-import './StyleComp.css';
+import ItemCount from '../ItemCount/ItemCount'; 
+import '../../components/Styles/StyleComp.css';
 
 const ItemDetail  = ({product}) => {
     const onAdd = () => { 

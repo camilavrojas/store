@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import '../components/StyleComp.css';
+import '../../components/Styles/StyleComp.css';
  
 
 const ItemCount = ({onAdd}) => {
