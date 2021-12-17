@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Metropolis es una tienda fotografica online, la misma dispone de un catalogo novedoso de camaras analogicas prefabricadas, como tambien una amplia venta de films analogicos, de diferentes distancias focales con increibles filtros para que tus fotografias sean mas lindas.
+
+
 ## Available Scripts
 
 In the project directory, you can run:

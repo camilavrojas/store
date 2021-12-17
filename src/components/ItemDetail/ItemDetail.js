@@ -1,5 +1,5 @@
-import {InputCount} from './ItemCount'
-import {ButtonCount} from './ItemCount'
+import {InputCount} from '../../components/ItemCount/ItemCount'
+import {ButtonCount} from '../../components/ItemCount/ItemCount'
 
 
 const ItemDetail = ({ product, inputType = 'input' }) => {

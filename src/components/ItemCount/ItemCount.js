@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './StyleComp.css';
+import '../Styles/StyleComp.css'
 import {Link} from 'react-router-dom' 
 
 
