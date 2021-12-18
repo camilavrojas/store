@@ -6,7 +6,7 @@ const ItemCount = ({onAdd}) => {
 
 
 
-    const [contador, setContador] = useState(1);
+    const [contador, setContador] = useState(0);
 
     const sumarClick = () => {
         if (contador <5 ) {
@@ -29,10 +29,12 @@ const ItemCount = ({onAdd}) => {
                 <button onClick={restarClick} type="button" class="btn btn-secondary btn-sm"> - </button>
             </div>
             <div>
-                <button onClick={onAdd} type="button" className="btn btn-light">Agregar al carrito: {contador} </button>
+                <button onClick={onAdd} className="btn btn-light">Agregar al carrito: {contador}</button>
             </div>
         </div>
     )
 }
+
+
 
 export default ItemCount

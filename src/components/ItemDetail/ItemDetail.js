@@ -13,8 +13,7 @@ const ItemDetail  = ({product}) => {
             <div className="DivDetail"> 
 
             <div> 
-            <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
-            <ItemCount onAdd = {onAdd} /> 
+            <img src={product?.img} alt={product?.name} className="ImgItemDetail"/> 
             </div>
 
             <div class="DivProducts card border-secondary mb-3">
