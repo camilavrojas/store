@@ -16,7 +16,7 @@ const ItemDetail = ({product}) => {
         setQty(qty);
     }
 
-    const handlePurchase = () => {
+    const EnviarAlCarrito = () => {
         addItem(product, qty);
 
     }
@@ -29,8 +29,11 @@ const ItemDetail = ({product}) => {
 
             <div> 
             <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
-            <ItemCount stock = {10} onAdd = {(qty) => handleBuy (qty)} />
-            <button onClick = {handlePurchase} class="btnItem"> <Link to= "/cart"> Ir al Carrito </Link></button>
+            {!buy ?
+                <ItemCount stock = {10} onAdd = {(qty) => handleBuy (qty)} />
+                :
+                <button className="btnItem btn-light" onClick = {EnviarAlCarrito}> <Link to= "/cart"> Ir al carrito </Link></button>
+                }
             </div>
 
             <div class="DivProducts card border-secondary mb-3">
@@ -46,8 +49,6 @@ const ItemDetail = ({product}) => {
                 <tr className="TrClass">Con flash incorporado: {product?.flash}</tr>
             </table>
             </div>
-           
-
             </div>
         </div>
 
