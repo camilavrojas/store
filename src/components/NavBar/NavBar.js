@@ -1,12 +1,16 @@
 import CartWidget from './CartWidget'
+import { useContext } from 'react';
 import { useEffect, useState } from 'react'
 import './NavBar.css';
 import {Link} from 'react-router-dom'
-
 import { getCategories } from '../../components/Productos/products'
+import { CartContext } from '../CartContext/CartContext';
+
 
 
 const NavBar = () => { 
+
+  const {getCantidad} = useContext(CartContext);
  
   const [categories, setCategories] = useState([])
 
@@ -32,7 +36,18 @@ const NavBar = () => {
               </div>
             </ul>
           </div>
-          <Link to = "/cart"><CartWidget/></Link>
+          <div style ={{position: "absolute", right: "20px"}}> 
+            <Link to = "/cart"><CartWidget/></Link>
+            <div 
+            style={{
+              height: '22px', width: '22px', borderRadius: "10px", backgroundColor: "red",
+              position: "absolute", top: "-8px", right: "-10px", textAlign: "center", alignItems: "center"
+            }}>
+              <span style={{
+                color: 'white',
+              }}>{getCantidad()}</span>
+            </div>
+          </div>
         </nav>
     )
 }
