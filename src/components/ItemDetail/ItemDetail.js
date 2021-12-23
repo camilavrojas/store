@@ -1,13 +1,24 @@
-import {InputCount} from '../../components/ItemCount/ItemCount'
-import {ButtonCount} from '../../components/ItemCount/ItemCount'
+import React, { useContext, useState } from 'react';
+import '../Styles/StyleComp.css'
+import { Link } from 'react-router-dom';
+import ItemCount from '../../components/ItemCount/ItemCount'
+import { CartContext } from '../../components/CartContext/CartContext'
 
+const ItemDetail = ({product}) => {
 
-const ItemDetail = ({ product, inputType = 'input' }) => {
+    const {addItem} = useContext(CartContext)
 
-    const ItemCount = inputType === 'input' ? ButtonCount : InputCount 
+    const [buy, setBuy] = useState(false);
+    const [qty, setQty] = useState(0);
 
-    const addOn = (count) => { 
-        console.log(`Agregado al carrito ${count}`)
+    const handleBuy = (qty) => {
+        setBuy(true);
+        setQty(qty);
+    }
+
+    const handlePurchase = () => {
+        addItem(product, qty);
+
     }
 
     return (
@@ -18,7 +29,8 @@ const ItemDetail = ({ product, inputType = 'input' }) => {
 
             <div> 
             <img src={product?.img} alt={product?.name} className="ImgItemDetail"/>
-            <ItemCount onConfirm={addOn} maxQuantity={product?.stock}/>
+            <ItemCount stock = {10} onAdd = {(qty) => handleBuy (qty)} />
+            <button onClick = {handlePurchase} class="btnItem"> <Link to= "/cart"> Ir al Carrito </Link></button>
             </div>
 
             <div class="DivProducts card border-secondary mb-3">
@@ -34,6 +46,7 @@ const ItemDetail = ({ product, inputType = 'input' }) => {
                 <tr className="TrClass">Con flash incorporado: {product?.flash}</tr>
             </table>
             </div>
+           
 
             </div>
         </div>

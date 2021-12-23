@@ -39,10 +39,6 @@
     margin-bottom: 20px;
 }
 
-
-
-
-
 .DivDetail {
     display: flex;
     background-color: rgb(235, 235, 235);
@@ -95,10 +91,6 @@
     margin-left: 160px;
 }
 
-.SpanContador {
-    font-size: 1.2rem;
-}
-
 .BotonContador {
     display: flex;
     gap: 1rem;
@@ -113,4 +105,16 @@
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
+}
+
+.btnItem {
+    color: blanchedalmond;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px 20px;
+    width: 150px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    list-style: none;
 }

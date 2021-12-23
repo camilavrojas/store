@@ -1,0 +1,14 @@
+.table {
+    background-color:rgb(223, 223, 223) ;
+    margin-top: 50px;
+    width: 1300px;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 20px 20px 30px 20px;
+
+}
+
+.tabla {
+    background-color: rgb(191, 191, 191);
+    padding: 20px 20px;
+}

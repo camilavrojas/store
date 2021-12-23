@@ -2,9 +2,12 @@ import CartWidget from './CartWidget'
 import { useEffect, useState } from 'react'
 import './NavBar.css';
 import {Link} from 'react-router-dom'
+
 import { getCategories } from '../../components/Productos/products'
 
+
 const NavBar = () => { 
+ 
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -29,7 +32,7 @@ const NavBar = () => {
               </div>
             </ul>
           </div>
-          <CartWidget/>
+          <Link to = "/cart"><CartWidget/></Link>
         </nav>
     )
 }

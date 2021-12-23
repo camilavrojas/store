@@ -4,11 +4,13 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Cart from './components/Cart/Cart';
+import CartContextProvider from './components/CartContext/CartContext';
 
 const App = () => {
 
   return (
     <div className="App"> 
+    <CartContextProvider>
     <BrowserRouter> 
       <NavBar/>
       <Switch>
@@ -21,11 +23,12 @@ const App = () => {
         <Route path='/detail/:paramId'>
          <ItemDetailContainer/>
         </Route>
-        <Route path='/cart/'> 
+        <Route path='/cart'> 
         <Cart/>
         </Route>
       </Switch>
      </BrowserRouter>
+     </CartContextProvider>
     </div>
   );
 }
